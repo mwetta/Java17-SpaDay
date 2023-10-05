@@ -6,10 +6,23 @@
     <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
 </head>
 <body>
+<!--TODO: Add a p tag and use th:text to bring in the value of name.-->
+<!--TODO: Add a p tag and use th:text to bring in the value of skintype.-->
+<!--TODO: Add a p tag and use th:text to bring in the value of manipedi.-->
 <h1>My Super Fancy Spa</h1>
+
 <div id = "clientProfile">
+    <h2>My Profile</h2>
+    <p th:text="${name}"></p>
+    <p th:text="${skintype}"></p>
+    <p th:text="${manipedi}"></p>
 </div>
 <div id = "servicesMenu">
+    <ol>
+        <th:block th:each="facial : ${appropriateFacials}">
+            <p th:text="${facial}">Info</p>
+        </th:block>
+    </ol>
 </div>
 </body>
 </html>
